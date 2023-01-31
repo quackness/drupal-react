@@ -1,5 +1,6 @@
 
 import './App.css';
+import EventsList from './components/EventsList';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
 
 
       <h1>Events</h1>
+      <EventsList />
       
     </div>
   );
