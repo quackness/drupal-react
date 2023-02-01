@@ -5,10 +5,11 @@ export default function EventsList() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get(`api/events`).then(function (response) {
+    axios.get(`api/events`)
+    .then(function (response) {
       setEvents([...response.data]);
-      console.log(response);
-    });
+    })
+    .catch(err => console.log(err));
   }, []);
 
   console.log("events", events);
