@@ -5,28 +5,19 @@ export default function EventsList() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios
-    .get(`api/events`)
-    .then(function (response) {
+    axios.get(`api/events`).then(function (response) {
       setEvents([...response.data]);
       console.log(response);
-    })
-  },[]);
+    });
+  }, []);
 
-  console.log("events", events)
-
-  // const titles = [];
-  // events.data.forEach((event) => {
-  //   titles.push(<p>{event.title.value}</p>);
-
-  // })
+  console.log("events", events);
 
   return (
     <div>
-      {events.map(event => (
-        <div>{event.title[0].value}</div>
+      {events.map((event, index) => (
+        <div key={index}>{event.title[0].value}</div>
       ))}
-
     </div>
   );
 }
